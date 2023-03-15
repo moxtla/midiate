@@ -1,17 +1,17 @@
 import React, { useCallback } from 'react'
 import { createSelector } from 'reselect'
 import { useSelector, useDispatch } from 'react-redux'
-import { makeStyles } from '@material-ui/core/styles'
-import Drawer from '@material-ui/core/Drawer'
-import List from '@material-ui/core/List'
-import Divider from '@material-ui/core/Divider'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
-import MenuIcon from '@material-ui/icons/Menu'
-import IconButton from '@material-ui/core/IconButton'
-import AppDefaultIcon from '@material-ui/icons/MusicVideo'
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
+import makeStyles from '@mui/styles/makeStyles';
+import Drawer from '@mui/material/Drawer'
+import List from '@mui/material/List'
+import Divider from '@mui/material/Divider'
+import ListItem from '@mui/material/ListItem'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import ListItemText from '@mui/material/ListItemText'
+import MenuIcon from '@mui/icons-material/Menu'
+import IconButton from '@mui/material/IconButton'
+import AppDefaultIcon from '@mui/icons-material/MusicVideo'
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 
 import { 
   getDrawerAppId,
@@ -64,57 +64,54 @@ function SideDrawer({ apps, items }) {
   }, [dispatch])
 
   return (
-      <React.Fragment>
-        <IconButton 
-          color="inherit" 
-          onClick={toggle(true)} 
+    <React.Fragment>
+      <IconButton color="inherit" onClick={toggle(true)} size="large">
+        <MenuIcon />
+      </IconButton> 
+      <Drawer anchor='right' open={drawerOpen} onClose={toggle(false)}>
+        <div
+          className={classes.drawer}
+          role="presentation"
+          onKeyDown={toggle(false)}
         >
-          <MenuIcon />
-        </IconButton> 
-        <Drawer anchor='right' open={drawerOpen} onClose={toggle(false)}>
-          <div
-            className={classes.drawer}
-            role="presentation"
-            onKeyDown={toggle(false)}
-          >
-          {drawerAppId != null 
-          && (
-            <div className={classes.btnContainer}>
-              <IconButton className={classes.backButton}>
-                <ChevronLeftIcon />
-              </IconButton>
-            </div>
-          )}
-          {drawerAppId != null 
-            ? (
-              <React.Fragment>
-                <AppItem action={() => dispatch(switchDrawerApp(null))} {...drawerAppConfig} />
-                {React.createElement(apps[drawerAppId], {config: drawerAppConfig})}
-              </React.Fragment>
-            )
-            : (
-              <React.Fragment>
-                <List>
-                  {appConfigs.filter(app => app.openInDrawer === true).map(app => 
-                    <AppItem key={app.id} action={() => dispatch(switchDrawerApp(app.id))} {...app} />)}
-                </List>
-                <Divider />
-                <List>
-                  {items.map(item => 
-                    <ListItem key={item.props.config.id} button onClick={() => {
-                      dispatch(switchForegroundApp(item.props.config.id))
-                      dispatch(toggleDrawer(false))
-                    }}>
-                      {item}
-                    </ListItem>
-                  )}
-                </List>
-              </React.Fragment>
-          )}
+        {drawerAppId != null 
+        && (
+          <div className={classes.btnContainer}>
+            <IconButton className={classes.backButton} size="large">
+              <ChevronLeftIcon />
+            </IconButton>
           </div>
-        </Drawer>
-      </React.Fragment>
-  )
+        )}
+        {drawerAppId != null 
+          ? (
+            <React.Fragment>
+              <AppItem action={() => dispatch(switchDrawerApp(null))} {...drawerAppConfig} />
+              {React.createElement(apps[drawerAppId], {config: drawerAppConfig})}
+            </React.Fragment>
+          )
+          : (
+            <React.Fragment>
+              <List>
+                {appConfigs.filter(app => app.openInDrawer === true).map(app => 
+                  <AppItem key={app.id} action={() => dispatch(switchDrawerApp(app.id))} {...app} />)}
+              </List>
+              <Divider />
+              <List>
+                {items.map(item => 
+                  <ListItem key={item.props.config.id} button onClick={() => {
+                    dispatch(switchForegroundApp(item.props.config.id))
+                    dispatch(toggleDrawer(false))
+                  }}>
+                    {item}
+                  </ListItem>
+                )}
+              </List>
+            </React.Fragment>
+        )}
+        </div>
+      </Drawer>
+    </React.Fragment>
+  );
 }
 
 

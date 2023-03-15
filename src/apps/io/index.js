@@ -1,5 +1,5 @@
 import { IO_APP_ID } from '../../constants'
-import SettingsInputSvideoIcon from '@material-ui/icons/SettingsInputSvideo'
+import SettingsInputSvideoIcon from '@mui/icons-material/SettingsInputSvideo'
 
 export const config = {
   id: IO_APP_ID,

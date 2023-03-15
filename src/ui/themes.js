@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles'
+import { createTheme, adaptV4Theme } from '@mui/material/styles';
 
 const commonTheme = {
 }
@@ -31,22 +31,22 @@ const darkTheme = {palette: {type: 'dark'}}
 
 export default [
   {
-    theme: createMuiTheme({...commonTheme, ...lightTheme, ...defaultMode}),
+    theme: createTheme(adaptV4Theme({...commonTheme, ...lightTheme, ...defaultMode})),
     name: "Light Theme",
     description: "Default theme, full animations",
   },
   {
-    theme: createMuiTheme({...commonTheme, ...darkTheme, ...defaultMode}),
+    theme: createTheme(adaptV4Theme({...commonTheme, ...darkTheme, ...defaultMode})),
     name: "Dark Theme",
     description: 'Dark theme ("Dark Mode"), full animations',
   },
   {
-    theme: createMuiTheme({...commonTheme, ...lightTheme, ...easyMode}),
+    theme: createTheme(adaptV4Theme({...commonTheme, ...lightTheme, ...easyMode})),
     name: "Easy Light Theme",
     description: "Default theme, friendly for slower browsers",
   },
   {
-    theme: createMuiTheme({...commonTheme, ...darkTheme, ...easyMode}),
+    theme: createTheme(adaptV4Theme({...commonTheme, ...darkTheme, ...easyMode})),
     name: "Easy Dark Theme",
     description: 'Dark theme ("Dark Mode"), friendly for slower browsers',
   },

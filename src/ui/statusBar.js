@@ -1,16 +1,16 @@
 import React, { useCallback } from 'react'
 import { connect } from 'react-redux'
 import clsx from 'clsx'
-import AppBar from '@material-ui/core/AppBar'
-import Box from '@material-ui/core/Box'
-import Button from '@material-ui/core/Button'
-import Zoom from '@material-ui/core/Zoom'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-import IconButton from '@material-ui/core/IconButton'
-import ArrowBackIcon from '@material-ui/icons/ArrowBack'
-import AppDefaultIcon from '@material-ui/icons/MusicVideo'
-import { makeStyles } from '@material-ui/core/styles'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Zoom from '@mui/material/Zoom'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
+import IconButton from '@mui/material/IconButton'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack'
+import AppDefaultIcon from '@mui/icons-material/MusicVideo'
+import makeStyles from '@mui/styles/makeStyles';
 
 import { PROGRAM_NAME, DEFAULT_APP_ID } from '../constants'
 import { ReactComponent as Logo } from '../logo.svg'
@@ -120,14 +120,14 @@ const StatusBarIcon = connect((state, props) => ({
     return null
 
   return (
-    <IconButton 
-      color="inherit" 
-      onClick={onClick} 
+    <IconButton
+      color="inherit"
+      onClick={onClick}
       className={classes.statusBarItem}
-    >
+      size="large">
       {children}
-    </IconButton> 
-  )
+    </IconButton>
+  );
 })
 
 const AppTitle = React.memo(

@@ -1,9 +1,9 @@
 import React from 'react'
-import Badge from '@material-ui/core/Badge'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
-import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled'
-import { green, yellow } from '@material-ui/core/colors'
+import Badge from '@mui/material/Badge'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import ListItemText from '@mui/material/ListItemText'
+import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled'
+import { green, yellow } from '@mui/material/colors'
 import { useInstrumentType, useLoading, useTranspose } from './settings'
 
 export default function DrawerItem() {

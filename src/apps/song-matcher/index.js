@@ -1,10 +1,10 @@
 import React, { useRef, useEffect, useState, Fragment } from "react";
 import BubbleChart from '@weknow/react-bubble-chart-d3';
-import Button from '@material-ui/core/Button'
-import CircularProgress from '@material-ui/core/CircularProgress'
-import Switch from '@material-ui/core/Switch'
-import FormGroup from '@material-ui/core/FormGroup'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
+import Button from '@mui/material/Button'
+import CircularProgress from '@mui/material/CircularProgress'
+import Switch from '@mui/material/Switch'
+import FormGroup from '@mui/material/FormGroup'
+import FormControlLabel from '@mui/material/FormControlLabel'
 import "./style.module.css"
 import { useChords } from '../../api/chords'
 

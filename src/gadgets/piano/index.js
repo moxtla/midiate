@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { Note, Scale, Midi } from "@tonaljs/tonal"
-import { makeStyles } from '@material-ui/core/styles'
+import makeStyles from '@mui/styles/makeStyles';
 import clsx from 'clsx'
 
 const useStyles = makeStyles(theme => ({
@@ -115,8 +115,7 @@ export default function Piano({classNames={}, styles={}, singleOctave,
     if (startMidi > endMidi)
       throw new Error(`start > end: ${startNote} > ${endNote}`)
     if (endMidi > MIDI_END_NOTE || startMidi < MIDI_START_NOTE)
-      throw new Error(`start or end out of bounds: `
-        `${startNote} < ${MIDI_START_NOTE} ||  ${endNote} > ${MIDI_END_NOTE}`)
+      throw new Error(`start or end out of bounds: ${startNote} < ${MIDI_START_NOTE} ||  ${endNote} > ${MIDI_END_NOTE}`)
 
     // translate range back from midi numbers to textual notes
     notes = [...Array(endMidi - startMidi + 1).keys()].map(m => Note.fromMidi(startMidi + m))

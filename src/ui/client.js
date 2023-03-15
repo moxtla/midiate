@@ -1,11 +1,11 @@
 import React, { useState, useCallback } from 'react'
 import { connect } from 'react-redux'
 import clsx from 'clsx'
-import Snackbar from '@material-ui/core/Snackbar'
-import Button from '@material-ui/core/Button'
-import { CssBaseline } from '@material-ui/core'
-import { ThemeProvider } from '@material-ui/core/styles';
-import { makeStyles } from '@material-ui/core/styles'
+import Snackbar from '@mui/material/Snackbar'
+import Button from '@mui/material/Button'
+import { CssBaseline } from '@mui/material'
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import makeStyles from '@mui/styles/makeStyles';
 
 import { addApp, switchDrawerApp } from '../redux/actions'
 import { 
@@ -125,16 +125,18 @@ class Client extends React.Component {
 // separate to functional component to easily include themes
 function Content(props) {
   return (
-    <ThemeProvider theme={props.theme}> 
-      {/* css */}
-      <CssBaseline />
-      {/* content */}
-      <LoadingScreen /> 
-      <AppLayout {...props}>
-        {props.children}
-      </AppLayout>
-    </ThemeProvider>
-  )
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={props.theme}> 
+        {/* css */}
+        <CssBaseline />
+        {/* content */}
+        <LoadingScreen /> 
+        <AppLayout {...props}>
+          {props.children}
+        </AppLayout>
+      </ThemeProvider>
+    </StyledEngineProvider>
+  );
 }
 
 function AppLayout(props) {

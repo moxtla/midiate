@@ -1,4 +1,4 @@
-import QueueMusicIcon from '@material-ui/icons/QueueMusic'
+import QueueMusicIcon from '@mui/icons-material/QueueMusic'
 
 export default {
   id: "CHORD_RECOGNIZER",

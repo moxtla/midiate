@@ -1,4 +1,4 @@
-import MusicNoteIcon from '@material-ui/icons/MusicNote'
+import MusicNoteIcon from '@mui/icons-material/MusicNote'
 
 export default {
   id: "PIANO_SIMULATOR",

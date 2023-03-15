@@ -1,9 +1,9 @@
 import React, { useLayoutEffect, useState, useMemo, useCallback } from 'react'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
-import { makeStyles } from '@material-ui/core/styles'
-import TextField from '@material-ui/core/TextField'
-import Button from '@material-ui/core/Button'
-import Autocomplete from '@material-ui/lab/Autocomplete'
+import makeStyles from '@mui/styles/makeStyles';
+import TextField from '@mui/material/TextField'
+import Button from '@mui/material/Button'
+import Autocomplete from '@mui/material/Autocomplete'
 import clsx from 'clsx'
 import { Note, Scale, Midi } from '@tonaljs/tonal'
 import Piano from '../../gadgets/piano'

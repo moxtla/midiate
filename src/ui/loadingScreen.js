@@ -1,13 +1,13 @@
 import React, { useCallback } from 'react'
 import { connect } from 'react-redux'
-import Modal from '@material-ui/core/Modal'
-import Fade from '@material-ui/core/Fade'
-import Backdrop from '@material-ui/core/Backdrop'
-import Typography from '@material-ui/core/Typography'
-import Container from '@material-ui/core/Container'
-import Fab from '@material-ui/core/Fab'
-import SettingsIcon from '@material-ui/icons/Settings'
-import { makeStyles } from '@material-ui/core/styles'
+import Modal from '@mui/material/Modal'
+import Fade from '@mui/material/Fade'
+import Backdrop from '@mui/material/Backdrop'
+import Typography from '@mui/material/Typography'
+import Container from '@mui/material/Container'
+import Fab from '@mui/material/Fab'
+import SettingsIcon from '@mui/icons-material/Settings'
+import makeStyles from '@mui/styles/makeStyles';
 import { 
   getIsAnyMidiInputActive,
 } from '../redux/selectors'

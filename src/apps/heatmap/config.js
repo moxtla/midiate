@@ -1,4 +1,4 @@
-import WhatshotIcon from '@material-ui/icons/Whatshot'
+import WhatshotIcon from '@mui/icons-material/Whatshot'
 
 export default {
   id: "HEATMAP",

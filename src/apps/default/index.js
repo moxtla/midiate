@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Container from '@material-ui/core/Container'
-import Typography from '@material-ui/core/Typography'
-import Paper from '@material-ui/core/Paper'
-import AppDefaultIcon from '@material-ui/icons/MusicVideo'
-import GitHubIcon from '@material-ui/icons/GitHub'
-import { makeStyles } from '@material-ui/core/styles'
+import Container from '@mui/material/Container'
+import Typography from '@mui/material/Typography'
+import Paper from '@mui/material/Paper'
+import AppDefaultIcon from '@mui/icons-material/MusicVideo'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import makeStyles from '@mui/styles/makeStyles';
 
 import { DEFAULT_APP_ID } from '../../constants'
 import { 

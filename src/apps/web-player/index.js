@@ -1,4 +1,4 @@
-import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled'
+import PlayCircleFilledIcon from '@mui/icons-material/PlayCircleFilled'
 
 export const config = {
   id: "WEB_PLAYER",
